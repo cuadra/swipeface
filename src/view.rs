@@ -412,10 +412,11 @@ fn specimen<'a>(app: &'a App, family: &'a Family) -> Element<'a, Message> {
     // -- Icons -------------------------------------------------------------
     // Icon fonts keep their icons in the private use areas, far behind the
     // letters; surface a sample so they are not buried in the glyph grid.
-    // A few dozen private-use glyphs are usually spare parts (bracket pieces,
-    // alternates), not icons, so ask for a real set.
+    // Text fonts also park spare parts there (bracket pieces, or Inter's 745
+    // alternates), so only call them icons when they dominate the font or
+    // there are thousands of them, as in a patched Nerd Font.
     if let Some(details) = details.filter(|details| {
-        details.icon_count >= 150 || details.icon_count * 2 >= details.chars.len().max(96)
+        details.icon_count >= 2000 || details.icon_count * 2 >= details.chars.len().max(96)
     }) {
         let icons = details.icons.iter().map(|&c| {
             container(set(c.to_string(), 30.0).wrapping(Wrapping::None))
