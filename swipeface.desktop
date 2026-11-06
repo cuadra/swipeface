@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Swipeface
+GenericName=Font Viewer
+Comment=View font files and browse installed fonts
+Exec=swipeface %f
+Icon=preferences-desktop-font
+Terminal=false
+Categories=Graphics;Viewer;
+Keywords=font;fonts;typeface;type;specimen;glyphs;
+MimeType=font/ttf;font/otf;font/collection;application/x-font-ttf;application/x-font-otf;application/x-font-truetype;application/x-font-opentype;application/font-sfnt;application/vnd.ms-opentype;
+StartupWMClass=swipeface
